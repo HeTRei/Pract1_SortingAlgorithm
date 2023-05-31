@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include <iomanip>
-
+#include <windows.h>
 
 void BubbleAscending(int *list, int NumberOfElements)
 {
@@ -9,7 +9,7 @@ void BubbleAscending(int *list, int NumberOfElements)
     for (int i = 0; i < NumberOfElements; i++)
         for (int j = i + 1; j < NumberOfElements; j++)
         {
-            if (list[j] > list[i])
+            if (list[j] < list[i])
             {
                 buffer = list[j];
                 list[j] = list[i];
@@ -28,7 +28,7 @@ void BubbleDescending(int *list, int NumberOfElements)
     for (int i = 0; i < NumberOfElements; i++)
         for (int j = i + 1; j < NumberOfElements; j++)
         {
-            if (list[j] < list[i])
+            if (list[j] > list[i])
             {
                 buffer = list[j];
                 list[j] = list[i];
@@ -44,16 +44,20 @@ void BubbleDescending(int *list, int NumberOfElements)
 
 int main()
 {
-    std::setlocale(LC_ALL, "ua");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    std::setlocale(LC_ALL, " ");
     srand(time(nullptr));
     double time = 0;
     std::chrono::duration<double> time1;
     int n = 1000;
     int *MatrixA = new int [n];
+
+    std::cout << "Згенерована матриця: " << std::endl;
     for (int i = 0; i < n; i++)
     {
             MatrixA[i] = rand();
-            std::cout << std::setw(3) << MatrixA[i] << " ";
+            std::cout << MatrixA[i] << " ";
     }
     
 
