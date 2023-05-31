@@ -1,11 +1,10 @@
 #include <iostream>
 #include <chrono>
 #include <iomanip>
-#include <windows.h>
 
 void BubbleAscending(int *list, int NumberOfElements)
 {
-    int buffer = 0;
+    int buffer;
     for (int i = 0; i < NumberOfElements; i++)
         for (int j = i + 1; j < NumberOfElements; j++)
         {
@@ -16,11 +15,6 @@ void BubbleAscending(int *list, int NumberOfElements)
                 list[i] = buffer;
             }
         }
-    for (int i = 0; i < NumberOfElements; i++)
-    {
-        std::cout << std::setw(3) << list[i] << " ";
-    }
-    std::cout << std::endl;
 }
 void BubbleDescending(int *list, int NumberOfElements)
 {
@@ -35,25 +29,17 @@ void BubbleDescending(int *list, int NumberOfElements)
                 list[i] = buffer;
             }
         }
-    for (int i = 0; i < NumberOfElements; i++)
-    {
-        std::cout << std::setw(3) << list[i] << " ";
-    }
-    std::cout << std::endl;
 }
 
 int main()
 {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
-    std::setlocale(LC_ALL, " ");
     srand(time(nullptr));
     double time = 0;
     std::chrono::duration<double> time1;
     int n = 1000;
     int *MatrixA = new int [n];
 
-    std::cout << "Згенерована матриця: " << std::endl;
+    std::cout << "Generated matrix: " << std::endl;
     for (int i = 0; i < n; i++)
     {
             MatrixA[i] = rand();
@@ -81,7 +67,7 @@ int main()
         }
 
     }
-    std::cout << "Найгірший середній час для бульбашки = " << (time/10);
+    std::cout << "Worst average time for Bubble Sort = " << (time/10);
 
 
     delete[] MatrixA;
