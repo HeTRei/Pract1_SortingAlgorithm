@@ -39,14 +39,6 @@ int main()
     int n = 1000;
     int *MatrixA = new int [n];
 
-    std::cout << "Generated matrix: " << std::endl;
-    for (int i = 0; i < n; i++)
-    {
-            MatrixA[i] = rand();
-            std::cout << MatrixA[i] << " ";
-    }
-    
-
     for (int i = 0; i < 10; i++)
     {
         if (i%2==0)
