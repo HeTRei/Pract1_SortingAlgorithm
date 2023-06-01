@@ -85,7 +85,7 @@ int main()
 {
     //Setup
     srand(time(nullptr));
-    double time;
+    double time = 0;
     std::chrono::duration<double> time1;
 
     //Sorting
